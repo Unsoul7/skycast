@@ -8,23 +8,14 @@ export const Hero = () => {
             <Navbar />
             <div id='search-group'>
                 <div>
-                    <span class="material-symbols-outlined">search</span>
+                    <span className="material-symbols-outlined">search</span>
                 </div>
-                <input type="text" name="" id="" placeholder='Search' />
-                <select>
-                    <option value="Locations">Location</option>
-                    <option value="News">News</option>
-                    <option value="Videos">Videos</option>
-                </select>
+                <input type="text" name="" id="" placeholder='Search' />    
 
             </div>  
             <p id='recent-weather'>Recent Locations</p>
             <div className='recent-locations-container'>
-            <RecentLocations/>
-            <RecentLocations/>
-            <RecentLocations/>
-            <RecentLocations/>
-
+                <RecentLocations/>
             </div>
         </div>
     )

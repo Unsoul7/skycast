@@ -1,8 +1,14 @@
+import Footer from "./Footer";
 import { Hero } from "./Hero";
+import { Weathers } from "./Weathers";
 
 function App() {
   return (
-    <Hero /> 
+    <>
+      <Hero />
+      <Weathers />
+      <Footer/>
+    </>
   );
 }
 

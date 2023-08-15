@@ -8,7 +8,7 @@ const Navbar = () => {
             <img src={logoicon} alt="" />
             <h2>SkyCast</h2>
         </div>
-        <span class="material-symbols-outlined">menu</span>
+        <span className="material-symbols-outlined">menu</span>
     </nav>
   )
 }
