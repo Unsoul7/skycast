@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import Weathercard from './Weathercard'
 
 export const Weathers = () => {
+
   const states = ["Andhra Pradesh",
-  "Arunachal Pradesh",
+    "Arunachal Pradesh",
     "Assam",
     "Bihar",
     "Chhattisgarh",
@@ -36,9 +37,11 @@ export const Weathers = () => {
     "Delhi",
     "Lakshadweep",
     "Puducherry"]
-    
-    const [WeatherData,setWeatherData] = useState([])
-    useEffect(() => {
+
+  const [WeatherData, setWeatherData] = useState([])
+  const [Loading, setLoading] = useState(true)
+
+  useEffect(() => {
     const fetchData = async () => {
       const weatherArray = [];
       for (const usstate of states) {
@@ -47,31 +50,34 @@ export const Weathers = () => {
           const response = await fetch(url);
           const result = await response.json();
           weatherArray.push({
-            region : result.location.name,
+            region: result.location.name,
             temp: result.current.temp_c,
           });
         } catch (error) {
           console.error(error);
         }
       }
-      setWeatherData(weatherArray); // Update the weather data state after fetching
+      setWeatherData(weatherArray);
+      setLoading(false)
     };
 
     fetchData();
-    console.log(WeatherData)
+    // console.log(WeatherData)
   }, []);
   return (
     <div className='weather-area'>
       <p>India Weather Conditions</p>
       <div className="weather-container">
         {
-          WeatherData.map((data, index) => (
-            <Weathercard key={index} city={data.region ? data.region : ''} temp={data.temp ? data.temp : ''} />
-          ))
+          Loading ? (<div className="loading-screen"><div className="loader"></div></div>) : (
+            WeatherData.map((data, index) => (
+              // console.log(data.region+""+data.temp)
+              <Weathercard key={index} city={data.region ? data.region : 'Loading data'} temp={data.temp ? data.temp : 'loading data'} />
+            )))
         }
-        </div>
+      </div>
     </div>
   )
-  
-  
+
+
 }

@@ -58,8 +58,8 @@ nav span {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    height: 70%;
-    padding: 0 6.5rem;
+    height: 100%;
+    padding: 3rem 6.5rem;
 }
 
 #search-group {
@@ -172,7 +172,7 @@ nav span {
     font-family: sans-serif;
 }
 
-footer{
+footer {
     padding: 2rem;
     margin-top: auto;
     width: 100%;
@@ -181,10 +181,40 @@ footer{
     margin-top: 3rem;
 }
 
-footer p{
-    font-size:15px ;
+footer p {
+    font-size: 15px;
     font-family: sans-serif;
     padding: 10px;
+}
+
+.loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 2rem;
+}
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @media only screen and (max-width:500px) {
@@ -206,7 +236,7 @@ footer p{
 @media only screen and (max-width:750px) {
 
     #search-group input {
-            width: 100%;
+        width: 100%;
     }
 
     .recent-locations-container {
@@ -224,10 +254,10 @@ footer p{
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        width: 100%;
+        width: 95%;
         padding: 10px;
         font-size: 15px;
-        margin: 5px;
+        margin: 2rem;
     }
 
     #realfeel-weather {

@@ -1,13 +1,13 @@
 import React from 'react'
 
-const RecentLocations = () => {
+const RecentLocations = (props) => {
+    let {region , country, temp} = props
     return (
             <div className="today-weather">
-                <p>Delhi <span style={{ fontSize: '10px' }}>India</span></p>
+                <p>{region} <span style={{ fontSize: '10px' }}>{country}</span></p>
                 <div className="today-temperature">
-                    <p id='temperature-value'>35&deg;</p>
+                    <p id='temperature-value'>{temp}&deg;C</p>
                 </div>
-                <p style={{ fontSize: '10px' }} id='realfeel-weather'>RealFeel 40&deg;</p>
             </div>
     )
 }
